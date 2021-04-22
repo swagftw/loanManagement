@@ -8,7 +8,10 @@ import (
 
 func NewHTTPServer(endpoints Endpoints) http.Handler {
 	r := mux.NewRouter()
-	//r.Use(middleWare)
+	r.Path("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "web/index.html")
+	})
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("web/static"))))
 	r.Path("/loans").Handler(ht.NewServer(
 		endpoints.CreateLoanEndpoint,
 		DecodeCreateLoanRequest,
