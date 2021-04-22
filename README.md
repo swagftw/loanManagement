@@ -9,4 +9,4 @@ This API is Loan Management microservice written in Golang using Go-kit.
 
 **Postman Collection for api**
 
-[Loan API.postman_collection.json](https://github.com/swagftw/loanManagement/Loan)
+[Loan API.postman_collection.json](https://github.com/swagftw/loanManagement/Loan_API.postman_collection.json)
