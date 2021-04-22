@@ -7,3 +7,6 @@ This API is Loan Management microservice written in Golang using Go-kit.
 > - Email is sent to user using SMTP server, after loan status changes
 > - Pagination is allowed, result limiting is allowed
 
+**Postman Collection for api**
+
+[Loan API.postman_collection.json](Loan API.postman_collection.json)
