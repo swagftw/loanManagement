@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "612d9b54-f808-402a-a1c1-6f2d1552611a",
+		"name": "Loan API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create loan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\":\"Swapnil Nakade\",\n    \"phoneNo\":\"1234567890\",\n    \"email\":\"user@example.com\",\n    \"loanAmount\":123456,\n    \"creditScore\":800\n}"
+				},
+				"url": {
+					"raw": "https://black-seer-311312.el.r.appspot.com/loans",
+					"protocol": "https",
+					"host": [
+						"black-seer-311312",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get loans -valid status values {appove, reject, cancelled, new}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://black-seer-311312.el.r.appspot.com/loans?status=new,cancelled,approve,reject&page=1&limit=10&loanAmountGreater=1000",
+					"protocol": "https",
+					"host": [
+						"black-seer-311312",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"loans"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "new,cancelled,approve,reject"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "loanAmountGreater",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get loan with id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://black-seer-311312.el.r.appspot.com/loan/f05a3ab9-4715-456e-8079-8977868b4081",
+					"protocol": "https",
+					"host": [
+						"black-seer-311312",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"loan",
+						"f05a3ab9-4715-456e-8079-8977868b4081"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update loan status with id valid values {approve,reject}",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\":\"reject\"\n}"
+				},
+				"url": {
+					"raw": "https://black-seer-311312.el.r.appspot.com/loans/f05a3ab9-4715-456e-8079-8977868b4081",
+					"protocol": "https",
+					"host": [
+						"black-seer-311312",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"loans",
+						"f05a3ab9-4715-456e-8079-8977868b4081"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel loan with id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://black-seer-311312.el.r.appspot.com/loans/f05a3ab9-4715-456e-8079-8977868b4081",
+					"protocol": "https",
+					"host": [
+						"black-seer-311312",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"loans",
+						"f05a3ab9-4715-456e-8079-8977868b4081"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
